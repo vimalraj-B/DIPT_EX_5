@@ -26,6 +26,7 @@ Software Requirements:
 10. Display the original and filtered images using Matplotlib.
 
 ### Program : 
+### Step 1: Import Libraries and Apply Average Filter
 ```python
 import cv2
 import matplotlib.pyplot as plt
@@ -45,6 +46,7 @@ plt.title("Average Filter Image")
 plt.axis("on")
 plt.show()
 ```
+### Step 2: Weighted Average Filter
 ```python
 kernel1=np.array([[1,2,1],[2,4,2],[1,2,1]])/16
 image2=cv2.cvtColor(image1,cv2.COLOR_BGR2RGB)
@@ -59,6 +61,7 @@ plt.title("Weighted Average Filter Image")
 plt.axis("on")
 plt.show()
 ```
+### Step 3: Gaussian Blur
 ```python
 gaussian_blur=cv2.GaussianBlur(image2,(33,33),0,0)
 plt.subplot(1,2,1)
@@ -71,6 +74,7 @@ plt.title("Gaussian Blur")
 plt.axis("on")
 plt.show()
 ```
+### Step 4: Median Blur
 ```python
 median=cv2.medianBlur(image2,13)
 plt.figure(figsize=(9,9))
@@ -84,6 +88,7 @@ plt.title("Median Blur")
 plt.axis("on")
 plt.show()
 ```
+### Step 5: Laplacian Kernel
 ```python
 kernel2=np.array([[-1,-1,-1],[2,-2,1],[2,1,-1]])
 image3=cv2.filter2D(image2,-1,kernel2)
@@ -97,6 +102,7 @@ plt.title("Laplacian Kernel")
 plt.axis("on")
 plt.show()
 ```
+### Step 6: Laplacian Operator
 ```python
 laplacian=cv2.Laplacian(image2,cv2.CV_64F)
 plt.subplot(1,2,1)
@@ -111,17 +117,17 @@ plt.show()
 ```
 
 ### Output : 
-
+### Step 1: Import Libraries and Apply Average Filter
 <img width="518" height="311" alt="image" src="https://github.com/user-attachments/assets/0f64b05c-8bc9-484b-830c-f0cba5179a84" /></br>
-
+### Step 2: Weighted Average Filter
 <img width="397" height="227" alt="image" src="https://github.com/user-attachments/assets/71c589c8-cafe-47f6-8f2b-850bf3cf2928" /></br>
-
+### Step 3: Gaussian Blur
 <img width="382" height="233" alt="image" src="https://github.com/user-attachments/assets/3bb6d324-ff7b-4ac0-9785-38f78ae79415" /></br>
-
+### Step 4: Median Blur
 <img width="527" height="310" alt="image" src="https://github.com/user-attachments/assets/7ca69b9c-254a-40af-8b6b-dac33b15d15e" /></br>
-
+### Step 5: Laplacian Kernel
 <img width="384" height="229" alt="image" src="https://github.com/user-attachments/assets/f210b643-d3e2-4c19-9161-53dae77092fe" /></br>
-
+### Step 6: Laplacian Operator
 <img width="387" height="234" alt="image" src="https://github.com/user-attachments/assets/6c492367-0ba8-40d0-b75e-d5512c64e6ac" /></br>
 
 
